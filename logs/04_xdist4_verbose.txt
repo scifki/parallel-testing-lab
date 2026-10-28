@@ -1,0 +1,62 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.14.4, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Арсений\Documents\Агенты\parallel_lab
+configfile: pytest.ini
+testpaths: tests
+plugins: split-0.11.0, xdist-3.8.0
+created: 4/4 workers
+4 workers [24 items]
+
+scheduling tests via LoadScheduling
+
+tests/test_catalog.py::test_catalog_item[0] 
+tests/test_catalog.py::test_catalog_item[6] 
+tests/test_catalog.py::test_catalog_item[4] 
+tests/test_catalog.py::test_catalog_item[2] 
+[gw0] [  4%] PASSED tests/test_catalog.py::test_catalog_item[0] 
+[gw1] [  8%] PASSED tests/test_catalog.py::test_catalog_item[2] 
+[gw2] [ 12%] PASSED tests/test_catalog.py::test_catalog_item[4] 
+tests/test_catalog.py::test_catalog_item[1] 
+[gw3] [ 16%] PASSED tests/test_catalog.py::test_catalog_item[6] 
+tests/test_catalog.py::test_catalog_item[3] 
+tests/test_catalog.py::test_catalog_item[5] 
+tests/test_catalog.py::test_catalog_item[7] 
+[gw0] [ 20%] PASSED tests/test_catalog.py::test_catalog_item[1] 
+[gw1] [ 25%] PASSED tests/test_catalog.py::test_catalog_item[3] 
+tests/test_catalog.py::test_catalog_item[8] 
+[gw3] [ 29%] PASSED tests/test_catalog.py::test_catalog_item[7] 
+[gw2] [ 33%] PASSED tests/test_catalog.py::test_catalog_item[5] 
+tests/test_catalog.py::test_catalog_item[9] 
+tests/test_orders.py::test_order_status[1] 
+tests/test_orders.py::test_order_status[0] 
+[gw0] [ 37%] PASSED tests/test_catalog.py::test_catalog_item[8] 
+[gw1] [ 41%] PASSED tests/test_catalog.py::test_catalog_item[9] 
+tests/test_orders.py::test_order_status[2] 
+tests/test_orders.py::test_order_status[3] 
+[gw3] [ 45%] PASSED tests/test_orders.py::test_order_status[1] 
+[gw2] [ 50%] PASSED tests/test_orders.py::test_order_status[0] 
+tests/test_orders.py::test_order_status[4] 
+tests/test_orders.py::test_order_status[5] 
+[gw0] [ 54%] PASSED tests/test_orders.py::test_order_status[2] 
+tests/test_orders.py::test_order_status[6] 
+[gw1] [ 58%] PASSED tests/test_orders.py::test_order_status[3] 
+tests/test_orders.py::test_order_status[7] 
+[gw2] [ 62%] PASSED tests/test_orders.py::test_order_status[5] 
+[gw3] [ 66%] PASSED tests/test_orders.py::test_order_status[4] 
+tests/test_orders.py::test_order_status[9] 
+tests/test_orders.py::test_order_status[8] 
+[gw0] [ 70%] PASSED tests/test_orders.py::test_order_status[6] 
+[gw1] [ 75%] PASSED tests/test_orders.py::test_order_status[7] 
+tests/test_reports.py::test_build_report[day] 
+tests/test_reports.py::test_build_report[week] 
+[gw2] [ 79%] PASSED tests/test_orders.py::test_order_status[9] 
+[gw3] [ 83%] PASSED tests/test_orders.py::test_order_status[8] 
+tests/test_reports.py::test_build_report[month] 
+tests/test_reports.py::test_build_report[year] 
+[gw0] [ 87%] PASSED tests/test_reports.py::test_build_report[day] 
+[gw1] [ 91%] PASSED tests/test_reports.py::test_build_report[week] 
+[gw2] [ 95%] PASSED tests/test_reports.py::test_build_report[month] 
+[gw3] [100%] PASSED tests/test_reports.py::test_build_report[year] 
+
+============================= 24 passed in 8.74s ==============================

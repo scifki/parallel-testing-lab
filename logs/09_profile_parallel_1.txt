@@ -1,0 +1,252 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.14.4, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Арсений\Documents\Агенты\parallel_lab
+configfile: pytest.ini
+plugins: split-0.11.0, xdist-3.8.0
+created: 4/4 workers
+4 workers [8 items]
+
+scheduling tests via LoadScheduling
+
+bug/test_profile.py::test_profile_name[Вера] 
+bug/test_profile.py::test_profile_name[Жанна] 
+bug/test_profile.py::test_profile_name[Анна] 
+bug/test_profile.py::test_profile_name[Дина] 
+[gw0] [ 12%] PASSED bug/test_profile.py::test_profile_name[Анна] 
+bug/test_profile.py::test_profile_name[Борис] 
+[gw2] [ 25%] FAILED bug/test_profile.py::test_profile_name[Дина] 
+[gw1] [ 37%] FAILED bug/test_profile.py::test_profile_name[Вера] 
+[gw3] [ 50%] FAILED bug/test_profile.py::test_profile_name[Жанна] 
+bug/test_profile.py::test_profile_name[Захар] 
+bug/test_profile.py::test_profile_name[Глеб] 
+bug/test_profile.py::test_profile_name[Егор] 
+[gw0] [ 62%] FAILED bug/test_profile.py::test_profile_name[Борис] 
+[gw2] [ 75%] FAILED bug/test_profile.py::test_profile_name[Егор] 
+[gw1] [ 87%] FAILED bug/test_profile.py::test_profile_name[Глеб] 
+[gw3] [100%] FAILED bug/test_profile.py::test_profile_name[Захар] 
+
+================================== FAILURES ===================================
+___________________________ test_profile_name[Дина] ___________________________
+[gw2] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Дина'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+E       AssertionError: assert 'Анна' == 'Дина'
+E         
+E         [0m[91m- Дина[39;49;00m[90m[39;49;00m
+E         [92m+ Анна[39;49;00m[90m[39;49;00m
+
+bug\test_profile.py:24: AssertionError
+___________________________ test_profile_name[Вера] ___________________________
+[gw1] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Вера'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+E       AssertionError: assert 'Анна' == 'Вера'
+E         
+E         [0m[91m- Вера[39;49;00m[90m[39;49;00m
+E         [92m+ Анна[39;49;00m[90m[39;49;00m
+
+bug\test_profile.py:24: AssertionError
+__________________________ test_profile_name[Жанна] ___________________________
+[gw3] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Жанна'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+E       AssertionError: assert 'Анна' == 'Жанна'
+E         
+E         [0m[91m- Жанна[39;49;00m[90m[39;49;00m
+E         [92m+ Анна[39;49;00m[90m[39;49;00m
+
+bug\test_profile.py:24: AssertionError
+__________________________ test_profile_name[Борис] ___________________________
+[gw0] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Борис'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+               ^^^^^^^^^^^^^^^^^^^^^
+
+bug\test_profile.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+bug\test_profile.py:15: in load_profile
+    return json.loads(path.read_text(encoding="utf-8"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\AppData\Local\Python\pythoncore-3.14-64\Lib\json\__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <json.decoder.JSONDecoder object at 0x000001A87D7C8830>
+s = '{"name": "\\u0413\\u043b\\u0435\\u0431"}0440"}'
+_w = <built-in method match of re.Pattern object at 0x000001A87D7B4930>
+
+    def decode(self, s, _w=WHITESPACE.match):
+        """Return the Python representation of ``s`` (a ``str`` instance
+        containing a JSON document).
+    
+        """
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+        end = _w(s, end).end()
+        if end != len(s):
+>           raise JSONDecodeError("Extra data", s, end)
+E           json.decoder.JSONDecodeError: Extra data: line 1 column 37 (char 36)
+
+..\..\..\AppData\Local\Python\pythoncore-3.14-64\Lib\json\decoder.py:348: JSONDecodeError
+___________________________ test_profile_name[Егор] ___________________________
+[gw2] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Егор'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+               ^^^^^^^^^^^^^^^^^^^^^
+
+bug\test_profile.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+bug\test_profile.py:15: in load_profile
+    return json.loads(path.read_text(encoding="utf-8"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\AppData\Local\Python\pythoncore-3.14-64\Lib\json\__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <json.decoder.JSONDecoder object at 0x00000149F9E88830>
+s = '{"name": "\\u0413\\u043b\\u0435\\u0431"}0440"}'
+_w = <built-in method match of re.Pattern object at 0x00000149F9E74930>
+
+    def decode(self, s, _w=WHITESPACE.match):
+        """Return the Python representation of ``s`` (a ``str`` instance
+        containing a JSON document).
+    
+        """
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+        end = _w(s, end).end()
+        if end != len(s):
+>           raise JSONDecodeError("Extra data", s, end)
+E           json.decoder.JSONDecodeError: Extra data: line 1 column 37 (char 36)
+
+..\..\..\AppData\Local\Python\pythoncore-3.14-64\Lib\json\decoder.py:348: JSONDecodeError
+___________________________ test_profile_name[Глеб] ___________________________
+[gw1] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Глеб'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+               ^^^^^^^^^^^^^^^^^^^^^
+
+bug\test_profile.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+bug\test_profile.py:15: in load_profile
+    return json.loads(path.read_text(encoding="utf-8"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\AppData\Local\Python\pythoncore-3.14-64\Lib\json\__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <json.decoder.JSONDecoder object at 0x0000026E077C8830>
+s = '{"name": "\\u0413\\u043b\\u0435\\u0431"}0440"}'
+_w = <built-in method match of re.Pattern object at 0x0000026E077B4930>
+
+    def decode(self, s, _w=WHITESPACE.match):
+        """Return the Python representation of ``s`` (a ``str`` instance
+        containing a JSON document).
+    
+        """
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+        end = _w(s, end).end()
+        if end != len(s):
+>           raise JSONDecodeError("Extra data", s, end)
+E           json.decoder.JSONDecodeError: Extra data: line 1 column 37 (char 36)
+
+..\..\..\AppData\Local\Python\pythoncore-3.14-64\Lib\json\decoder.py:348: JSONDecodeError
+__________________________ test_profile_name[Захар] ___________________________
+[gw3] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Захар'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+               ^^^^^^^^^^^^^^^^^^^^^
+
+bug\test_profile.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+bug\test_profile.py:15: in load_profile
+    return json.loads(path.read_text(encoding="utf-8"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\AppData\Local\Python\pythoncore-3.14-64\Lib\json\__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <json.decoder.JSONDecoder object at 0x0000023EFB9A8830>
+s = '{"name": "\\u0413\\u043b\\u0435\\u0431"}0440"}'
+_w = <built-in method match of re.Pattern object at 0x0000023EFB994930>
+
+    def decode(self, s, _w=WHITESPACE.match):
+        """Return the Python representation of ``s`` (a ``str`` instance
+        containing a JSON document).
+    
+        """
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+        end = _w(s, end).end()
+        if end != len(s):
+>           raise JSONDecodeError("Extra data", s, end)
+E           json.decoder.JSONDecodeError: Extra data: line 1 column 37 (char 36)
+
+..\..\..\AppData\Local\Python\pythoncore-3.14-64\Lib\json\decoder.py:348: JSONDecodeError
+=========================== short test summary info ===========================
+FAILED bug/test_profile.py::test_profile_name[Дина] - AssertionError: assert ...
+FAILED bug/test_profile.py::test_profile_name[Вера] - AssertionError: assert ...
+FAILED bug/test_profile.py::test_profile_name[Жанна] - AssertionError: assert...
+FAILED bug/test_profile.py::test_profile_name[Борис] - json.decoder.JSONDecod...
+FAILED bug/test_profile.py::test_profile_name[Егор] - json.decoder.JSONDecode...
+FAILED bug/test_profile.py::test_profile_name[Глеб] - json.decoder.JSONDecode...
+FAILED bug/test_profile.py::test_profile_name[Захар] - json.decoder.JSONDecod...
+========================= 7 failed, 1 passed in 1.43s =========================

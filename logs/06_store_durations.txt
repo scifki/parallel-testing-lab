@@ -1,0 +1,5 @@
+﻿........................                                                 [100%]
+
+[pytest-split] Stored test durations in C:\Users\Арсений\Documents\Агенты\parallel_lab\.test_durations
+
+24 passed in 31.05s

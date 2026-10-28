@@ -1,0 +1,18 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.14.4, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Арсений\Documents\Агенты\parallel_lab
+configfile: pytest.ini
+plugins: split-0.11.0, xdist-3.8.0
+collecting ... collected 8 items
+
+bug/test_profile.py::test_profile_name[Анна] PASSED                      [ 12%]
+bug/test_profile.py::test_profile_name[Борис] PASSED                     [ 25%]
+bug/test_profile.py::test_profile_name[Вера] PASSED                      [ 37%]
+bug/test_profile.py::test_profile_name[Глеб] PASSED                      [ 50%]
+bug/test_profile.py::test_profile_name[Дина] PASSED                      [ 62%]
+bug/test_profile.py::test_profile_name[Егор] PASSED                      [ 75%]
+bug/test_profile.py::test_profile_name[Жанна] PASSED                     [ 87%]
+bug/test_profile.py::test_profile_name[Захар] PASSED                     [100%]
+
+============================== 8 passed in 2.44s ==============================

@@ -1,0 +1,145 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.14.4, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Арсений\Documents\Агенты\parallel_lab
+configfile: pytest.ini
+plugins: split-0.11.0, xdist-3.8.0
+created: 4/4 workers
+4 workers [8 items]
+
+scheduling tests via LoadScheduling
+
+bug/test_profile.py::test_profile_name[Жанна] 
+bug/test_profile.py::test_profile_name[Анна] 
+bug/test_profile.py::test_profile_name[Дина] 
+bug/test_profile.py::test_profile_name[Вера] 
+[gw0] [ 12%] PASSED bug/test_profile.py::test_profile_name[Анна] 
+bug/test_profile.py::test_profile_name[Борис] 
+[gw1] [ 25%] FAILED bug/test_profile.py::test_profile_name[Вера] 
+bug/test_profile.py::test_profile_name[Глеб] 
+[gw2] [ 37%] FAILED bug/test_profile.py::test_profile_name[Дина] 
+[gw3] [ 50%] FAILED bug/test_profile.py::test_profile_name[Жанна] 
+bug/test_profile.py::test_profile_name[Егор] 
+bug/test_profile.py::test_profile_name[Захар] 
+[gw0] [ 62%] FAILED bug/test_profile.py::test_profile_name[Борис] 
+[gw1] [ 75%] FAILED bug/test_profile.py::test_profile_name[Глеб] 
+[gw3] [ 87%] PASSED bug/test_profile.py::test_profile_name[Захар] 
+[gw2] [100%] FAILED bug/test_profile.py::test_profile_name[Егор] 
+
+================================== FAILURES ===================================
+___________________________ test_profile_name[Вера] ___________________________
+[gw1] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Вера'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+E       AssertionError: assert 'Анна' == 'Вера'
+E         
+E         [0m[91m- Вера[39;49;00m[90m[39;49;00m
+E         [92m+ Анна[39;49;00m[90m[39;49;00m
+
+bug\test_profile.py:24: AssertionError
+___________________________ test_profile_name[Дина] ___________________________
+[gw2] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Дина'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+E       AssertionError: assert 'Анна' == 'Дина'
+E         
+E         [0m[91m- Дина[39;49;00m[90m[39;49;00m
+E         [92m+ Анна[39;49;00m[90m[39;49;00m
+
+bug\test_profile.py:24: AssertionError
+__________________________ test_profile_name[Жанна] ___________________________
+[gw3] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Жанна'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+E       AssertionError: assert 'Анна' == 'Жанна'
+E         
+E         [0m[91m- Жанна[39;49;00m[90m[39;49;00m
+E         [92m+ Анна[39;49;00m[90m[39;49;00m
+
+bug\test_profile.py:24: AssertionError
+__________________________ test_profile_name[Борис] ___________________________
+[gw0] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Борис'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+E       AssertionError: assert 'Захар' == 'Борис'
+E         
+E         [0m[91m- Борис[39;49;00m[90m[39;49;00m
+E         [92m+ Захар[39;49;00m[90m[39;49;00m
+
+bug\test_profile.py:24: AssertionError
+___________________________ test_profile_name[Глеб] ___________________________
+[gw1] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Глеб'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+E       AssertionError: assert 'Захар' == 'Глеб'
+E         
+E         [0m[91m- Глеб[39;49;00m[90m[39;49;00m
+E         [92m+ Захар[39;49;00m[90m[39;49;00m
+
+bug\test_profile.py:24: AssertionError
+___________________________ test_profile_name[Егор] ___________________________
+[gw2] win32 -- Python 3.14.4 C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+
+name = 'Егор'
+
+    @pytest.mark.parametrize(
+        "name", ["Анна", "Борис", "Вера", "Глеб", "Дина", "Егор", "Жанна", "Захар"]
+    )
+    def test_profile_name(name):
+        save_profile(PROFILE, name)
+        time.sleep(0.3)  # имитация работы приложения
+>       assert load_profile(PROFILE)["name"] == name
+E       AssertionError: assert 'Захар' == 'Егор'
+E         
+E         [0m[91m- Егор[39;49;00m[90m[39;49;00m
+E         [92m+ Захар[39;49;00m[90m[39;49;00m
+
+bug\test_profile.py:24: AssertionError
+=========================== short test summary info ===========================
+FAILED bug/test_profile.py::test_profile_name[Вера] - AssertionError: assert ...
+FAILED bug/test_profile.py::test_profile_name[Дина] - AssertionError: assert ...
+FAILED bug/test_profile.py::test_profile_name[Жанна] - AssertionError: assert...
+FAILED bug/test_profile.py::test_profile_name[Борис] - AssertionError: assert...
+FAILED bug/test_profile.py::test_profile_name[Глеб] - AssertionError: assert ...
+FAILED bug/test_profile.py::test_profile_name[Егор] - AssertionError: assert ...
+========================= 6 failed, 2 passed in 1.51s =========================

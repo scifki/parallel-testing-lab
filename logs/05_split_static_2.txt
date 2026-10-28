@@ -1,0 +1,11 @@
+﻿
+[pytest-split] No test durations found. Pytest-split will split tests evenly when no durations are found. 
+[pytest-split] You can expect better results in consequent runs, when test timings have been documented.
+
+
+
+[pytest-split] Splitting tests with algorithm: duration_based_chunks
+[pytest-split] Running group 2/4 (estimated duration: 6.00s)
+
+......                                                                   [100%]
+6 passed, 18 deselected in 4.02s

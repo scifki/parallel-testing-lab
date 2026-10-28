@@ -1,0 +1,11 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.14.4, pytest-9.2.0, pluggy-1.7.0
+rootdir: C:\Users\Арсений\Documents\Агенты\parallel_lab
+configfile: pytest.ini
+testpaths: tests
+plugins: split-0.11.0, xdist-3.8.0
+created: 2/2 workers
+2 workers [24 items]
+
+........................                                                 [100%]
+============================= 24 passed in 16.62s =============================

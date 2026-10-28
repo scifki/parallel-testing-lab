@@ -1,0 +1,7 @@
+﻿
+
+[pytest-split] Splitting tests with algorithm: least_duration
+[pytest-split] Running group 4/4 (estimated duration: 8.01s)
+
+......                                                                   [100%]
+6 passed, 18 deselected in 8.02s

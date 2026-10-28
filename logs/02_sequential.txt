@@ -1,0 +1,41 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.14.4, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Арсений\Documents\Агенты\parallel_lab
+configfile: pytest.ini
+testpaths: tests
+plugins: split-0.11.0, xdist-3.8.0
+collecting ... collected 24 items
+
+tests/test_catalog.py::test_catalog_item[0] PASSED                       [  4%]
+tests/test_catalog.py::test_catalog_item[1] PASSED                       [  8%]
+tests/test_catalog.py::test_catalog_item[2] PASSED                       [ 12%]
+tests/test_catalog.py::test_catalog_item[3] PASSED                       [ 16%]
+tests/test_catalog.py::test_catalog_item[4] PASSED                       [ 20%]
+tests/test_catalog.py::test_catalog_item[5] PASSED                       [ 25%]
+tests/test_catalog.py::test_catalog_item[6] PASSED                       [ 29%]
+tests/test_catalog.py::test_catalog_item[7] PASSED                       [ 33%]
+tests/test_catalog.py::test_catalog_item[8] PASSED                       [ 37%]
+tests/test_catalog.py::test_catalog_item[9] PASSED                       [ 41%]
+tests/test_orders.py::test_order_status[0] PASSED                        [ 45%]
+tests/test_orders.py::test_order_status[1] PASSED                        [ 50%]
+tests/test_orders.py::test_order_status[2] PASSED                        [ 54%]
+tests/test_orders.py::test_order_status[3] PASSED                        [ 58%]
+tests/test_orders.py::test_order_status[4] PASSED                        [ 62%]
+tests/test_orders.py::test_order_status[5] PASSED                        [ 66%]
+tests/test_orders.py::test_order_status[6] PASSED                        [ 70%]
+tests/test_orders.py::test_order_status[7] PASSED                        [ 75%]
+tests/test_orders.py::test_order_status[8] PASSED                        [ 79%]
+tests/test_orders.py::test_order_status[9] PASSED                        [ 83%]
+tests/test_reports.py::test_build_report[day] PASSED                     [ 87%]
+tests/test_reports.py::test_build_report[week] PASSED                    [ 91%]
+tests/test_reports.py::test_build_report[month] PASSED                   [ 95%]
+tests/test_reports.py::test_build_report[year] PASSED                    [100%]
+
+============================= slowest 5 durations =============================
+4.00s call     tests/test_reports.py::test_build_report[year]
+4.00s call     tests/test_reports.py::test_build_report[week]
+4.00s call     tests/test_reports.py::test_build_report[month]
+4.00s call     tests/test_reports.py::test_build_report[day]
+1.00s call     tests/test_orders.py::test_order_status[5]
+============================= 24 passed in 31.07s =============================

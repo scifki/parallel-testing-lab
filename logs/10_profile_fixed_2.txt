@@ -1,0 +1,29 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.14.4, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\Арсений\Documents\Агенты\parallel_lab\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Арсений\Documents\Агенты\parallel_lab
+configfile: pytest.ini
+plugins: split-0.11.0, xdist-3.8.0
+created: 4/4 workers
+4 workers [8 items]
+
+scheduling tests via LoadScheduling
+
+tests/test_profile.py::test_profile_name[Жанна] 
+tests/test_profile.py::test_profile_name[Вера] 
+tests/test_profile.py::test_profile_name[Дина] 
+tests/test_profile.py::test_profile_name[Анна] 
+[gw0] [ 12%] PASSED tests/test_profile.py::test_profile_name[Анна] 
+[gw3] [ 25%] PASSED tests/test_profile.py::test_profile_name[Жанна] 
+[gw2] [ 37%] PASSED tests/test_profile.py::test_profile_name[Дина] 
+[gw1] [ 50%] PASSED tests/test_profile.py::test_profile_name[Вера] 
+tests/test_profile.py::test_profile_name[Захар] 
+tests/test_profile.py::test_profile_name[Борис] 
+tests/test_profile.py::test_profile_name[Егор] 
+tests/test_profile.py::test_profile_name[Глеб] 
+[gw3] [ 62%] PASSED tests/test_profile.py::test_profile_name[Захар] 
+[gw2] [ 75%] PASSED tests/test_profile.py::test_profile_name[Егор] 
+[gw0] [ 87%] PASSED tests/test_profile.py::test_profile_name[Борис] 
+[gw1] [100%] PASSED tests/test_profile.py::test_profile_name[Глеб] 
+
+============================== 8 passed in 1.36s ==============================
